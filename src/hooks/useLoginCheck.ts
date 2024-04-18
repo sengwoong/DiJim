@@ -1,11 +1,11 @@
 import {useEffect, useState} from 'react';
 
-interface UseLoginCheckProps<T> {
+interface UseEmailAndPwdCheckProps<T> {
   initialValue: T;
   validate: (values: T) => Record<keyof T, string>;
 }
 
-function useLoginCheck<T>({initialValue, validate}: UseLoginCheckProps<T>) {
+function useEmailAndPwdCheck<T>({initialValue, validate}: UseEmailAndPwdCheckProps<T>) {
   const [values, setValues] = useState(initialValue);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -40,4 +40,4 @@ function useLoginCheck<T>({initialValue, validate}: UseLoginCheckProps<T>) {
   return {values, errors, touched, getTextInputProps};
 }
 
-export default useLoginCheck;
+export default useEmailAndPwdCheck;

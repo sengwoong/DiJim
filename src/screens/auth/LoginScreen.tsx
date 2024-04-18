@@ -2,12 +2,12 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 import InputField from '../../components/InputField';
 import CustomButton from '../../components/CustomButton';
-import useLoginCheck from '../../hooks/useLoginCheck';
 import { validateLogin } from '../../utils';
+import useEmailAndPwdCheck from '../../hooks/useLoginCheck';
 
 
 function LoginScreen() {
-  const login = useLoginCheck({
+  const login = useEmailAndPwdCheck({
     initialValue: {email: '', password: ''},
     validate: validateLogin,
   });
